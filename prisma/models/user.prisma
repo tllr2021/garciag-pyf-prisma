@@ -6,7 +6,7 @@ type User {
   password: String!
   birthday: DateTime
   name: String!
-  isMember: Boolean!
+  isMember: Boolean! @default(value: false)
   type: String!
-  card: Card
+  card: Card @relation(link: INLINE)
 }

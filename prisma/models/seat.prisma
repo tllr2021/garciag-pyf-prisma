@@ -2,7 +2,7 @@ type Seat {
   id: ID! @id
   row: String!
   number: Int!
-  isOcuppied: Boolean!
+  isOcuppied: Boolean! @default(value: false)
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }

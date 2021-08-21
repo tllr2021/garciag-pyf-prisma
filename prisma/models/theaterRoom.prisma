@@ -1,16 +1,16 @@
 enum theaterType {
   VIP
   NORMAL
-  3D
+  THREED
 }
 
 type TheaterRoom {
   id: ID! @id
-  number: Int!
+  name: Int!
   numberOfSeats: Int!
   price: Float!
-  seats: [Seat!]!
-  type: theaterType
+  seats: [Seat!]! @relation(link: INLINE)
+  type: theaterType!
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }

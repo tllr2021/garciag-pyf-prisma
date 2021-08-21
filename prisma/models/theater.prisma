@@ -4,8 +4,8 @@ type Theater {
   state: String!
   city: String!
   address: String!
-  billboard: [Movie!]!
-  theaterRooms: [TheaterRoom!]!
+  billboard: [Movie!]! @relation(link: INLINE)
+  theaterRooms: [TheaterRoom!]! @relation(link: INLINE)
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }

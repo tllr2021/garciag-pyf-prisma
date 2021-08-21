@@ -6,4 +6,27 @@ mutation {
             password: "$2a$10$GSRkm7Xn7a.uMPmTM9DequTm7AzqRHMyx9lowvykIfoTeh7pMbgO."
         }
     ) { id }
+
+    Movie1: createMovie (data: {
+        title: "Reservoir dogs"
+        director: "Quentin Tarantino"
+        description: "Quentin Tarantino Movie"
+        length: 200
+        rating: R
+        genre: {
+        set: [HORROR, SUSPENSE]
+        }
+    }) {id, title}
+
+    Movie2: createMovie (data: {
+        title: "Reservoir dogs"
+        director: "Quentin Tarantino"
+        description: "Quentin Tarantino Movie"
+        length: 200
+        rating: R
+        genre: {
+        set: [HORROR, SUSPENSE]
+        }
+    }) {id, title}
+
 }

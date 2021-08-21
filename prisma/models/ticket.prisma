@@ -1,10 +1,10 @@
 type Ticket {
   id: ID! @id
   client: String!
-  movie: Movie!
+  movie: Movie! @relation(link: INLINE)
   total: Float!
-  seat: Seat!
-  theaterRoom: TheaterRoom!
+  seat: Seat! @relation(link: INLINE)
+  theaterRoom: TheaterRoom! @relation(link: INLINE)
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }

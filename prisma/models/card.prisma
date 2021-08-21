@@ -1,0 +1,7 @@
+type Card {
+  id: ID! @id
+  member: Member!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  expiration: DateTime!
+}

@@ -1,0 +1,16 @@
+enum theaterType {
+  VIP
+  NORMAL
+  3D
+}
+
+type TheaterRoom {
+  id: ID! @id
+  number: Int!
+  numberOfSeats: Int!
+  price: Float!
+  seats: [Seat!]!
+  type: theaterType
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}

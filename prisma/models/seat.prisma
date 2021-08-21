@@ -1,0 +1,8 @@
+type Seat {
+  id: ID! @id
+  row: String!
+  number: Int!
+  isOcuppied: Boolean!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}

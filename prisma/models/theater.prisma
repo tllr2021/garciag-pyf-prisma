@@ -1,0 +1,11 @@
+type Theater {
+  id: ID! @id
+  name: String!
+  state: String!
+  city: String!
+  address: String!
+  billboard: [Movie!]!
+  theaterRooms: [TheaterRoom!]!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}

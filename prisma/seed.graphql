@@ -1,32 +1,366 @@
 mutation {
-    user: createUser(
-        data: {
-            email: "admin@admin.com"
-            name: "Admin"
-            password: "$2a$10$GSRkm7Xn7a.uMPmTM9DequTm7AzqRHMyx9lowvykIfoTeh7pMbgO."
+    user: createUser (data: {
+        email: "admin@admin.com"
+        name: "Admin"
+        isMember: true
+        birthday: "1999-02-21T14:10:20+01:00"
+        type: ADMIN
+        create: {
+            expiration: "2030-01-01T14:10:20+01:00"
         }
-    ) { id }
+        password: "$2a$10$GSRkm7Xn7a.uMPmTM9DequTm7AzqRHMyx9lowvykIfoTeh7pMbgO."
+    }) { id }
 
     Movie1: createMovie (data: {
         title: "Reservoir dogs"
         director: "Quentin Tarantino"
-        description: "Quentin Tarantino Movie"
-        length: 200
+        description: "Six criminals, hired to steal diamonds, do not know each other's true identity. While attempting the heist, the police ambushes them, leading them to believe that one of them is an undercover officer."
+        length: 120
         rating: R
         genre: {
-        set: [HORROR, SUSPENSE]
+            set: [THRILLER]
         }
     }) {id, title}
 
     Movie2: createMovie (data: {
-        title: "Reservoir dogs"
+        title: "Pulp Fiction"
         director: "Quentin Tarantino"
-        description: "Quentin Tarantino Movie"
-        length: 200
+        description: "In the realm of underworld, a series of incidents intertwines the lives of two Los Angeles mobsters, a gangster's wife, a boxer and two small-time criminals."
+        length: 120
         rating: R
         genre: {
-        set: [HORROR, SUSPENSE]
+            set: [THRILLER, ACTION]
         }
     }) {id, title}
 
+    Movie3: createMovie (data: {
+        title: "Harry Potter and the Philosopher's Stone"
+        director: "Chris Columbus"
+        description: "Harry Potter, an eleven-year-old orphan, discovers that he is a wizard and is invited to study at Hogwarts. Even as he escapes a dreary life and enters a world of magic, he finds trouble awaiting him."
+        length: 108
+        rating: G
+        genre: {
+            set: [COMEDY]
+        }
+    }) {id, title}
+
+    Movie4: createMovie (data: {
+        title: "Harry Potter and the Prisoner of Azkaban"
+        director: "Alfonso Cuarón"
+        description: "Harry, Ron and Hermoine return to Hogwarts just as they learn about Sirius Black and his plans to kill Harry. However, when Harry runs into him, he learns that the truth is far from reality."
+        length: 108
+        rating: G
+        genre: {
+            set: [COMEDY, SUSPENSE]
+        }
+    }) {id, title}
+
+    TheaterRoom1: createTheaterRoom ( data: {
+        name: 1
+        numberOfSeats: 30
+        price: 90
+        seats: {
+            create: [
+                {
+                    row: "A"
+                    number: 1
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 2
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 3
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 4
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 5
+                    isOcuppied: false
+                },
+            ]
+        }
+        type: VIP
+    }) {id, name}
+    
+    TheaterRoom2: createTheaterRoom ( data: {
+        name: 2
+        numberOfSeats: 30
+        price: 45
+        seats: {
+            create: [
+                {
+                    row: "A"
+                    number: 1
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 2
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 3
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 4
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 5
+                    isOcuppied: false
+                },
+            ]
+        }
+        type: NORMAL
+    }) {id, name}
+
+    TheaterRoom3: createTheaterRoom ( data: {
+        name: 3
+        numberOfSeats: 30
+        price: 45
+        seats: {
+            create: [
+                {
+                    row: "A"
+                    number: 1
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 2
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 3
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 4
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 5
+                    isOcuppied: false
+                },
+            ]
+        }
+        type: NORMAL
+    }) {id, name}
+
+    TheaterRoom4: createTheaterRoom ( data: {
+        name: 4
+        numberOfSeats: 30
+        price: 45
+        seats: {
+            create: [
+                {
+                    row: "A"
+                    number: 1
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 2
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 3
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 4
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 5
+                    isOcuppied: false
+                },
+            ]
+        }
+        type: NORMAL
+    }) {id, name}
+
+    TheaterRoom5: createTheaterRoom ( data: {
+        name: 5
+        numberOfSeats: 30
+        price: 45
+        seats: {
+            create: [
+                {
+                    row: "A"
+                    number: 1
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 2
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 3
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 4
+                    isOcuppied: false
+                },
+                {
+                    row: "A"
+                    number: 5
+                    isOcuppied: false
+                },
+            ]
+        }
+        type: NORMAL
+    }) {id, name}
+
+    Cine1: createTheater ( data: {
+        name: "Cinepolis Antea"
+        state: "Querétaro"
+        city: "Santiago de Querétaro"
+        address: "#12401, Santiago de Querétaro, MX 76127"
+        billboard: {
+            create: [
+                {
+                    title: "Harry Potter and the Prisoner of Azkaban"
+                    director: "Alfonso Cuarón"
+                    description: "Harry, Ron and Hermoine return to Hogwarts just as they learn about Sirius Black and his plans to kill Harry. However, when Harry runs into him, he learns that the truth is far from reality."
+                    length: 108
+                    rating: G
+                    genre: {
+                        set: [COMEDY, SUSPENSE]
+                    }
+                },
+                {
+                    title: "Harry Potter and the Philosopher's Stone"
+                    director: "Chris Columbus"
+                    description: "Harry Potter, an eleven-year-old orphan, discovers that he is a wizard and is invited to study at Hogwarts. Even as he escapes a dreary life and enters a world of magic, he finds trouble awaiting him."
+                    length: 108
+                    rating: G
+                    genre: {
+                        set: [COMEDY]
+                    }
+                },
+                {
+                    title: "Pulp Fiction"
+                    director: "Quentin Tarantino"
+                    description: "In the realm of underworld, a series of incidents intertwines the lives of two Los Angeles mobsters, a gangster's wife, a boxer and two small-time criminals."
+                    length: 120
+                    rating: R
+                    genre: {
+                        set: [THRILLER, ACTION]
+                    }
+                },
+                {
+                    title: "Reservoir dogs"
+                    director: "Quentin Tarantino"
+                    description: "Six criminals, hired to steal diamonds, do not know each other's true identity. While attempting the heist, the police ambushes them, leading them to believe that one of them is an undercover officer."
+                    length: 120
+                    rating: R
+                    genre: {
+                        set: [THRILLER]
+                    }
+                },
+            ]
+        }
+        theaterRooms: {
+            create: {
+                name: 1
+                numberOfSeats: 30
+                price: 45
+                seats: {
+                    create: [
+                        {
+                            row: "A"
+                            number: 1
+                            isOcuppied: false
+                        },
+                        {
+                            row: "A"
+                            number: 2
+                            isOcuppied: false
+                        },
+                        {
+                            row: "A"
+                            number: 3
+                            isOcuppied: false
+                        },
+                        {
+                            row: "A"
+                            number: 4
+                            isOcuppied: false
+                        },
+                        {
+                            row: "A"
+                            number: 5
+                            isOcuppied: false
+                        },
+                    ]
+                }
+                type: NORMAL
+            }
+        }
+    }) {id, name}
+
+    Ticket1: createTicket( data: {
+        client: "Luis Arturo García"
+        movie: {
+            create: {
+                title: "Harry Potter and the Philosopher's Stone"
+                director: "Chris Columbus"
+                description: "Harry Potter, an eleven-year-old orphan, discovers that he is a wizard and is invited to study at Hogwarts. Even as he escapes a dreary life and enters a world of magic, he finds trouble awaiting him."
+                length: 108
+                rating: G
+                genre: {
+                    set: [COMEDY]
+                }
+            }
+        }
+        total: 45
+        seat: {
+            create: {
+                row: "A"
+                number: 1
+                isOcuppied: true
+            }
+        }
+        theaterRoom: {
+            create: {
+                name: 1
+                numberOfSeats: 30
+                price: 90
+                seats: {
+                    create: [
+                        {
+                            row: "A"
+                            number: 1
+                            isOcuppied: true
+                        },
+                    ]
+                }
+                type: VIP
+            }
+        }
+    }) {id, client, movie{title} }
 }

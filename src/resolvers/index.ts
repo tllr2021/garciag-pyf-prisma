@@ -1,4 +1,8 @@
 import { Subscription } from './Subscription'
+import { Ticket } from './Ticket';
+import { User } from './User';
+import { Theater } from './Theater';
+import { TheaterRoom } from './TheaterRoom';
 
 const path = require("path");
 const { mergeResolvers, fileLoader } = require("merge-graphql-schemas");
@@ -13,4 +17,8 @@ export default {
   Query,
   Mutation,
   Subscription,
+  Ticket,
+  User,
+  Theater,
+  TheaterRoom,
 };

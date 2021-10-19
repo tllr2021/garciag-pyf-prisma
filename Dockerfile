@@ -12,14 +12,6 @@ RUN yarn install
 
 ENV PORT=4000
 
-ENV PRISMA_SECRET=mysecret123
-
-ENV APP_SECRET=jwtsecret123
-
-ENV URL_BASE=http://localhost:4466
-
-ENV ENVIRONMENT=development
-
 EXPOSE 4000
 
 CMD ["yarn", "start"]

@@ -12,6 +12,7 @@ type User {
   password: String!
   birthday: DateTime
   name: String!
+  points: Int!
   isMember: Boolean! @default(value: false)
   type: UserType!
   card: Card @relation(link: INLINE)

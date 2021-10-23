@@ -1,0 +1,20 @@
+type TicketSale {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  theater: Theater! @relation(link: INLINE)
+  user: User! @relation(link: INLINE)
+  total: Float!
+  tickets: [Ticket!]! @relation(link: INLINE)
+  usePoints: Boolean!
+}
+
+type ProductSale {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  theater: Theater! @relation(link: INLINE)
+  user: User! @relation(link: INLINE)
+  total: Float!
+  products: [Product!]! @relation(link: INLINE)
+}

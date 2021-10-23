@@ -3,4 +3,6 @@ type Card {
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
   expiration: DateTime!
+  active: Boolean! @default(value: true)
+  points: Int! @default(value: 0)
 }

@@ -8,6 +8,9 @@ datamodel:
   - ./models/theater.prisma
   - ./models/theaterRoom.prisma
   - ./models/ticket.prisma
+  - ./models/product.prisma
+  - ./models/sale.prisma
+  - ./models/employee.prisma
 
 generate:
   - generator: typescript-client

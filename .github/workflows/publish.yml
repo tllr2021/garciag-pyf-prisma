@@ -1,4 +1,4 @@
-name: CinemaApp
+name: Cinema
 on:
   push:
     branches:

@@ -16,6 +16,6 @@ src/media/
 *.jpeg
 *.gif
 media/public/preview/
-src/generated/prisma-client/index.ts
-src/generated/prisma-client/prisma-schema.ts
-src/types/generated/prisma-schema.graphql
+# src/generated/prisma-client/index.ts
+# src/generated/prisma-client/prisma-schema.ts
+# src/types/generated/prisma-schema.graphql

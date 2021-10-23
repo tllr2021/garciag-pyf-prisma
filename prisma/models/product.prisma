@@ -1,0 +1,16 @@
+type Product {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  name: String!
+  stock: Int!
+  price: Float!
+}
+
+type Inventory {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  theater: Theater! @relation(link: INLINE)
+  products: [Product]! @relation(link: INLINE)
+}

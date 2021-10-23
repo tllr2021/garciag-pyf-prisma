@@ -1,0 +1,37 @@
+enum EmployeeStatus {
+  ACTIVE
+  INACTIVE
+  ON_VACATION
+}
+
+enum EmployeeArea {
+  CANDY
+  TICKETS
+  SANITIZE
+  ROOM_CLEANING
+}
+
+enum Days {
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+  SATURDAY
+  SUNDAY
+}
+
+type Employee {
+  id: ID! @id
+  name: String!
+  email: String! @unique
+  password: String!
+  payrollNumber: Int @unique
+  status: EmployeeStatus!
+  paymentDue: Float
+  area: EmployeeArea!
+  workDays: [Days!]!
+  theater: Theater!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}

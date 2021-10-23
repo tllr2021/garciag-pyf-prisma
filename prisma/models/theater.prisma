@@ -6,6 +6,7 @@ type Theater {
   address: String!
   billboard: [Movie!]! @relation(link: INLINE)
   theaterRooms: [TheaterRoom!]! @relation(link: INLINE)
+  employees: [Employee!]! @relation(link: INLINE)
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }

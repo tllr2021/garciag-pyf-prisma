@@ -3,9 +3,9 @@ import { Context } from "../../utils";
 
 export default {
   async setPwd(parent, args, ctx: Context) {
-    const { pwd, token } = args.data;
-    const password = await bcrypt.hash(pwd, 10);
-    return await ctx.prisma.updateUser({ data: { password }, where: { token_verify: token}});
+    const { password, email } = args.data;
+    const encryptedPassword = await bcrypt.hash(password, 10);
+    return await ctx.prisma.updateUser({ data: { password: encryptedPassword }, where: { email: email}});
   },
   updateUser: (parent, args, ctx: Context) => ctx.prisma.updateUser(args),
 };

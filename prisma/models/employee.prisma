@@ -25,7 +25,7 @@ type Employee {
   id: ID! @id
   email: String! @unique
   password: String!
-  payrollNumber: Int
+  payrollNumber: Int @unique
   status: EmployeeStatus!
   paymentDue: Float
   area: EmployeeArea!

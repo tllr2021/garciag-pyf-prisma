@@ -1,12 +1,39 @@
 input AuthPwd {
-  pwd: String!
-  token: String!
+  email: String!
+  password: String!
+}
+
+input EmployeeInput {
+  id: ID
+  name: String!
+  email: String!
+  password: String!
+  status: EmployeeStatus!
+  area: EmployeeArea!
+  workDays: EmployeeCreateworkDaysInput
+  theater: TheaterCreateOneWithoutEmployeesInput!
 }
 
 type Mutation {
   setPwd(data: AuthPwd!): User!
-  signup(email: String!, password: String!, name: String!): AuthPayload!
+  signup(
+    email: String!,
+    password: String!,
+    name: String!
+    birthday: DateTime,
+    isMember: Boolean!,
+    card: CardCreateOneInput
+  ): AuthPayload!
   login(email: String!, password: String!): AuthPayload!
+  employeeLogin(email: String!, password: String!): AuthPayload!
+  updateEmployeeByPayroll(payrollNumber: Int!, data: EmployeeUpdateInput ): Employee!
+  customCreateEmployee(data: EmployeeInput!): Employee!
+  customCreateProductSale(data: ProductSaleCreateInput!): ProductSale!
+  customCreateTicketSale(data: TicketSaleCreateInput!): TicketSale!
+}
+
+type Query {
+  getUserPoints(userId: String!): Int!
 }
 
 type Subscription {

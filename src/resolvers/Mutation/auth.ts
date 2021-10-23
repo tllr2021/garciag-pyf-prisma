@@ -35,4 +35,26 @@ export default {
       return error;
     }
   },
+
+  async employeeLogin(parent, { email, password }, ctx: Context) {
+    try {
+      const employee = await ctx.prisma.employee({ email });
+      if (!employee) {
+        return new ApolloError('Invalid email or password', 'ERR_AUTH')
+      }
+      const valid = await bcrypt.compare(password, employee.password);
+      if (!valid) {
+        // throw new Error(`Invalid email or password`);
+        return new ApolloError('Invalid email or password', 'ERR_AUTH')
+      }
+      return {
+        token: jwt.sign({ employeeId: employee.id }, process.env.APP_SECRET, {
+          expiresIn: "10h",
+        }),
+        employee,
+      };
+    } catch (error) {
+      return error;
+    }
+  },
 }

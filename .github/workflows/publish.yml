@@ -6,6 +6,7 @@ on:
 env:
   PRISMA_MANAGEMENT_API_SECRET: ${{ secrets.PRISMA_MANAGEMENT_API_SECRET }}
   URL_BASE: http://147.182.187.121:4466
+  PRISMA_SECRET: mysecret123
   ENVIRONMENT: production
 jobs:
   prisma_deploy:

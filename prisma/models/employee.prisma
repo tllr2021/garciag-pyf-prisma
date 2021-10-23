@@ -23,6 +23,7 @@ enum Days {
 
 type Employee {
   id: ID! @id
+  name: String!
   email: String! @unique
   password: String!
   payrollNumber: Int @unique

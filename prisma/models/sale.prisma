@@ -6,7 +6,6 @@ type TicketSale {
   user: User! @relation(link: INLINE)
   total: Float!
   tickets: [Ticket!]! @relation(link: INLINE)
-  usePoints: Boolean!
 }
 
 type ProductSale {

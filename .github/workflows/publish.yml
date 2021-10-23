@@ -19,8 +19,7 @@ jobs:
           touch .env
           echo PRISMA_SECRET=${{ secrets.PRISMA_SECRET }} >> .env
           echo APP_SECRET=${{ secrets.APP_SECRET }} >> .env
-          echo BASE_URL=${{ secrets.BASE_URL }} >> .env
-          echo ENVIRONMENT=${{ secrets.ENVIRONMENT }} >> .env
+          echo URL_BASE=${{ secrets.URL_BASE }} >> .env
           echo PRISMA_MANAGEMENT_SECRET=${{ secrets.PRISMA_MANAGEMENT_SECRET }} >> .env
       - name: Include repo
         uses: actions/checkout@v2

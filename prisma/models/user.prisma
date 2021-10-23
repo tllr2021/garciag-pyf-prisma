@@ -1,9 +1,3 @@
-enum UserType {
-  ADMIN
-  EMPLOYEE
-  CLIENT
-}
-
 type User {
   id: ID! @id
   createdAt: DateTime! @createdAt
@@ -13,6 +7,5 @@ type User {
   birthday: DateTime
   name: String!
   isMember: Boolean! @default(value: false)
-  type: UserType!
   card: Card @relation(link: INLINE)
 }
